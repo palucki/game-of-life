@@ -9,7 +9,7 @@ Features:
 
 ## Screenshots
 
-![](animation.gif)
+![](res/animation.gif)
 
 ### Prerequisites
 
@@ -22,7 +22,7 @@ Simply clone / download the repository and build it.
 
 ```
 git clone git@github.com:palucki/game-of-life.git
-cd game-of-life
+cd game-of-life/src
 qmake
 make
 ```
