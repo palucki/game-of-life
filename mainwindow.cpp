@@ -101,7 +101,6 @@ void MainWindow::InitGroupBox()
 
 void MainWindow::InitLifeField()
 {
-
     clearHazard();
     CurrentGeneration = 0;
     AliveCells = 0;
@@ -117,16 +116,11 @@ void MainWindow::InitLifeField()
     LifeField->setRowCount(ROWS);
     LifeField->setColumnCount(COLS);
 
-    for(int i=0; i<LifeField->rowCount(); i++)
-    {
-        LifeField->setRowHeight(i,rowheigth);
-    }
+    LifeField->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    LifeField->verticalHeader()->setDefaultSectionSize(10);
 
-    for(int j=0; j<LifeField->columnCount(); j++)
-    {
-         LifeField->setColumnWidth(j,colwidth);
-    }
-
+    LifeField->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    LifeField->horizontalHeader()->setDefaultSectionSize(10);
 
     for(int i=0; i<ROWS; i++)
     {
