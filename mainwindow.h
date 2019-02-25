@@ -4,7 +4,6 @@
 #include <QHeaderView>
 #include <QTableView>
 #include <QMainWindow>
-#include <QHBoxLayout>
 #include <QAction>
 #include <QTableWidget>
 #include <QTableWidgetItem>
@@ -31,8 +30,6 @@
 #define ROWS 47
 #define COLS 55
 
-
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -48,11 +45,9 @@ private:
     int AliveCells;
     void countALiveCells();
     int CurrentGeneration;
-    QHBoxLayout *WindowLayout;
     QTableWidget *LifeField;
     area areastate;
     QGroupBox *Options;
-    QVBoxLayout *VLayout;
     QPushButton *Starter;
     QPushButton *Iterator;
     QPushButton *Stop;
@@ -62,7 +57,6 @@ private:
     QComboBox *intervaledit;
     QAction *saveAction;
     QAction *loadAction;
-    QMenuBar *menus;
     void clearHazard();
     void refreshLifeField();
     void InitGroupBox();

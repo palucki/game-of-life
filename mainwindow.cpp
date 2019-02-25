@@ -9,23 +9,15 @@ MainWindow::MainWindow(QWidget *parent)
     qsrand(static_cast<uint>(time.msec()));
 
     this->setFixedSize(820,540);
-    WindowLayout = new QHBoxLayout;
     LifeField = new QTableWidget(this);
     timer = new QTimer(this);
     timer->setInterval(100);
-    Options = new QGroupBox(this);
 
-    WindowLayout->addWidget(LifeField,1);
-    WindowLayout->addWidget(Options,1);
-
-
-
-    menus = new QMenuBar(this);
+    QMenu *file = menuBar()->addMenu("File");
     loadAction = new QAction("Load the map", this);
     saveAction = new QAction("Save the map", this);
-    menus->addAction(loadAction);
-    menus->addAction(saveAction);
-    menus->setFixedWidth(240);
+    file->addAction(loadAction);
+    file->addAction(saveAction);
 
     InitGroupBox();
     InitLifeField();
@@ -51,8 +43,6 @@ void MainWindow::InitGroupBox()
     lifeString->setFixedSize(170,20);
     lifeString->move(600, 370);
 
-    VLayout = new QVBoxLayout(Options);
-
     Iterator = new QPushButton("Next generation",this);
     Starter = new QPushButton("Start auto-play",this);
     Stop = new QPushButton("Pause the game",this);
@@ -65,7 +55,9 @@ void MainWindow::InitGroupBox()
     intervaledit = new QComboBox(this);
     intervaledit->move(600,70);
     for(int i=0; i<10; i++)
-    intervaledit->insertItem(i,QString::number((i+1)*100));
+    {
+        intervaledit->insertItem(i,QString::number((i+1)*100));
+    }
     connect(intervaledit,SIGNAL(currentIndexChanged(int)), this, SLOT(changeinterval(int)));
 
     Iterator->setFixedSize(150,40);
