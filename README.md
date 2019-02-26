@@ -9,7 +9,7 @@ Features:
 
 ## Screenshots
 
-![](res/animation.gif)
+![Made with https://ezgif.com/maker](res/animation.gif)
 
 ### Prerequisites
 
